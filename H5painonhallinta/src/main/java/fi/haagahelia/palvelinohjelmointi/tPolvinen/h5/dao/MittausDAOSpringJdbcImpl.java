@@ -39,13 +39,12 @@ public class MittausDAOSpringJdbcImpl implements MittausDAO {
 	 * generoima id asetetaan parametrina annettuun olioon.
 	 */
 	public void talleta(Mittaus m) {
-		final String sql = "INSERT INTO mittaukset(paino, pvm) values(?,?)";
+		final String sql = "INSERT INTO mittaukset(paino, pvm) values(?, CURDATE())";
 
 		// anonyymi sisäluokka tarvitsee vakioina välitettävät arvot,
 		// jotta roskien keruu onnistuu tämän metodin suorituksen päättyessä.
 		final Double paino = m.getPaino();
-		final Date pvm = m.getPvm();
-
+	
 		// jdbc pistää generoidun id:n tänne talteen
 		KeyHolder idHolder = new GeneratedKeyHolder();
 
@@ -57,7 +56,7 @@ public class MittausDAOSpringJdbcImpl implements MittausDAO {
 				PreparedStatement ps = connection.prepareStatement(sql,
 						new String[] { "id" });
 				ps.setDouble(1, paino);
-				ps.setDate(2, pvm);
+//				ps.setDate(2, pvm);
 				
 				return ps;
 			}

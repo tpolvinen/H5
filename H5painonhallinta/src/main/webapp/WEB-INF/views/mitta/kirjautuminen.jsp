@@ -18,10 +18,11 @@
 		<fieldset>
 			<form:form modelAttribute="kayttaja" method="post">
 				
-				<spring:hasBindErrors name="kayttaja">
-					<p class="Virheotsikko">Jotain vialla:</p>
-					<div class="Virheblokki"><form:errors path="*"/></div>
-				</spring:hasBindErrors>
+<!-- 				Kommentoin tämän pois koska se näkyy aina eikä vain tarvittaessa: -->
+<!-- 				<spring:hasBindErrors name="kayttaja"> -->
+<!-- 					<p class="Virheotsikko">Jotain vialla:</p> -->
+<%-- 					<div class="Virheblokki"><form:errors path="*"/></div> --%>
+<!-- 				</spring:hasBindErrors> -->
 				
 				<p>
 					<form:label	path="nimi">Käyttäjän nimi</form:label><br/>
@@ -37,7 +38,7 @@
 				
 			</form:form>
 			<form:form action="../">
-    			<button type="submit">Takaisin alkuun</button>
+    			<button type="submit">Takaisin alkuun / "kirjaudu ulos"</button>
 			</form:form>
 		</fieldset>
 		

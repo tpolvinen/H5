@@ -62,8 +62,22 @@ public class MittausController {
 		@RequestMapping(value="/lista", method=RequestMethod.GET)
 		public String naytaKaikki(@ModelAttribute(value="uusimittaus") MittausImpl mittaus, Model model) {
 			List <Mittaus> mittauslista = dao.haeKaikki();
-			model.addAttribute("mittauslulista", mittauslista);
+			model.addAttribute("mittauslista", mittauslista);
 			return "mitta/lista";
 		}
 		
+		//MITTAUSFORMIN TEKEMINEN
+		@RequestMapping(value="uusimittaus", method=RequestMethod.GET)
+		public String getMittaus(Model model) { 
+			Mittaus tyhjamittaus = new MittausImpl();
+			model.addAttribute("mittaus", tyhjamittaus);
+			return "mitta/mittaus";
+		}
+		
+		//MITTAUSFORMIN TIETOJEN VASTAANOTTO
+		@RequestMapping(value="uusimittaus", method=RequestMethod.POST)
+		public String createMittaus(@ModelAttribute(value="mittaus") MittausImpl mittaus, Model model) {
+					dao.talleta(mittaus);
+					return "redirect:/mittaukset/lista";
+			}
 }
