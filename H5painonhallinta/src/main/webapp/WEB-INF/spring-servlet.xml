@@ -7,7 +7,7 @@
 	http://www.springframework.org/schema/mvc http://www.springframework.org/schema/mvc/spring-mvc.xsd">
 
 
-	<context:component-scan base-package="fi.haagahelia.palvelinohjelmointi.tPolvinen.H5" />
+	<context:component-scan base-package="fi.haagahelia.palvelinohjelmointi.tPolvinen.h5" />
 
 	<!-- Resolves view names to protected .jsp resources within the /WEB-INF/views 
 		directory -->

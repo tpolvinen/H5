@@ -4,7 +4,7 @@
 <html>
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
-<title>H4pistekirjanpito</title>
+<title>H5painonhallinta</title>
 <link rel="stylesheet" type="text/css" href="resources/styles/common.css">
 </head>
 <body>
@@ -19,8 +19,8 @@
 		</p>
 	
 		<p>
-			Tähän uusi linkki, kiits!
-			<a href="arvostelut/uusikirjautuminen">Kirjautuminen</a>
+			Toimiikohan tämä?
+			<a href="mittaukset/uusikirjautuminen">Kirjautuminen</a>
 		</p>
 		
 	</div>
