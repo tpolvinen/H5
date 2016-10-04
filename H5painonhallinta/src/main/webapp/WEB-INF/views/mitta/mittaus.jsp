@@ -20,7 +20,7 @@
 				
 				<p>
 					<form:label	path="paino">Paino</form:label><br/>
-					<form:input path="paino" />		
+					<form:input path="paino" cssErrorClass="VirheellinenKentta"/> <form:errors path="paino" cssClass="Virheteksti"/>
 				</p>
 				<p>	
 					<button type="submit">Lisää</button>

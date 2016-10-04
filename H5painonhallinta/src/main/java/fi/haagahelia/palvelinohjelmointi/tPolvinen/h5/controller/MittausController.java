@@ -76,8 +76,12 @@ public class MittausController {
 		
 		//MITTAUSFORMIN TIETOJEN VASTAANOTTO
 		@RequestMapping(value="uusimittaus", method=RequestMethod.POST)
-		public String createMittaus(@ModelAttribute(value="mittaus") MittausImpl mittaus, Model model) {
-					dao.talleta(mittaus);
-					return "redirect:/mittaukset/lista";
+		public String createMittaus(@ModelAttribute(value="mittaus") @Valid MittausImpl mittaus, BindingResult result, Model model) {
+			if (result.hasErrors()) {
+				return "mitta/mittaus";
+			} else {
+				dao.talleta(mittaus);
+				return "redirect:/mittaukset/lista";
 			}
+		}
 }
