@@ -19,7 +19,7 @@
 			<form:form modelAttribute="kayttaja" method="post">
 				
 				<p>
-					<form:label	path="nimi">Opettajanimi</form:label><br/>
+					<form:label	path="nimi">Käyttäjän nimi</form:label><br/>
 					<form:input path="nimi" value="Otto" />		
 				</p>
 				<p>
