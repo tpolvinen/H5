@@ -19,7 +19,6 @@
 		</p>
 	
 		<p>
-			Toimiikohan tämä?
 			<a href="mittaukset/uusikirjautuminen">Kirjautuminen</a>
 		</p>
 		

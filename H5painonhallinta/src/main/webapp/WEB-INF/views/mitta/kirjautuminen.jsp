@@ -18,13 +18,18 @@
 		<fieldset>
 			<form:form modelAttribute="kayttaja" method="post">
 				
+				<spring:hasBindErrors name="kayttaja">
+					<p class="Virheotsikko">Jotain vialla:</p>
+					<div class="Virheblokki"><form:errors path="*"/></div>
+				</spring:hasBindErrors>
+				
 				<p>
 					<form:label	path="nimi">Käyttäjän nimi</form:label><br/>
-					<form:input path="nimi" value="Otto" />		
+					<form:input path="nimi" value="Otto" cssErrorClass="VirheellinenKentta"/> <form:errors path="nimi" cssClass="Virheteksti"/>
 				</p>
 				<p>
 					<form:label	path="salasana">Salasana</form:label><br/>
-					<form:input path="salasana" value="opettaja"/>		
+					<form:input path="salasana" value="opettaja" cssErrorClass="VirheellinenKentta"/> <form:errors path="salasana" cssClass="Virheteksti"/>	
 				</p>
 				<p>	
 					<button type="submit">Kirjaudu</button>
