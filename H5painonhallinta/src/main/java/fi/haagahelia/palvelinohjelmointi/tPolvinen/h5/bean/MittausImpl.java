@@ -2,11 +2,18 @@ package fi.haagahelia.palvelinohjelmointi.tPolvinen.h5.bean;
 
 import java.sql.Date;
 
+import javax.validation.constraints.DecimalMax;
+import javax.validation.constraints.DecimalMin;
+
 public class MittausImpl implements Mittaus {
 	
 	private int id;
+	
+	@DecimalMax("300.0") @DecimalMin("10.0") 
 	private Double paino;
+	
 	private Date pvm;
+	
 	public int getId() {
 		return id;
 	}
